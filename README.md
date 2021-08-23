@@ -268,7 +268,7 @@ Bloom at 000001BE7A7EC9D0
   Start Time  : Thu Aug 19 13:34:39 2021
 
   Random mode : 3
-  Random      : Finding a puzzle in a ranges
+  Random      : Finding hex + -n ? letters (0-f)
   Start       : f01cfea414140de5dae2223b00360000000001
   Finish      : f01cfea414140de5dae2223b0036ffffffffff
   Range       : f01cfea414140de5dae2223b0036 + 10 x (0-f)
@@ -329,10 +329,59 @@ Bloom at 0000024CFFD6D970
 
  [00:01:46] [CPU+GPU: 1284,81 Mk/s] [GPU: 1214,81 Mk/s] [T: 124,117,843,968] [F: 0]
  ```
-## Modes 5-54 (additional)
+ ## Mode 5
+ ### Mnemonic 12 random words (bip39)
+ - Start HIGH Speed GPU: ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 5```
+ - Use for **TEST only** ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 5 -d 1``` **Very Slow**!!!
+```
+C:\Users\user>LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 5 -d 1
+
+ LostCoins v2.0
+
+ SEARCH MODE  : COMPRESSED
+ DEVICE       : GPU
+ CPU THREAD   : 0
+ GPU IDS      : 0
+ GPU GRIDSIZE : 288x512
+ RANDOM MODE  : 5
+ ROTOR SPEED  : SLOW (hashes sha256 are displayed)
+ CHARACTERS   : 0
+ PASSPHRASE   :
+ PASSPHRASE 2 :
+ DISPLAY MODE : 1
+ TEXT COLOR   : 15
+ MAX FOUND    : 50
+ HASH160 FILE : test.bin
+ OUTPUT FILE  : Found.txt
+
+ Loading      : 100 %
+ Loaded       : 75,471 address
+
+Bloom at 000002404799E490
+  Version     : 2.1
+  Entries     : 150942
+  Error       : 0,0000010000
+  Bits        : 4340363
+  Bits/Elem   : 28,755175
+  Bytes       : 542546 (0 MB)
+  Hash funcs  : 20
+
+  Start Time  : Mon Aug 23 22:54:04 2021
+
+  Random mode : 5
+  Using       : Mnemonic (bip39)
+  List        : 2048 words
+  Rotor       : Generation of 12 random words
+  Site        : https://github.com/phrutis/LostCoins
+  Donate      : bc1qh2mvnf5fujg93mwl8pe688yucaw9sflmwsukz9
+
+  GPU         : GPU #0 NVIDIA GeForce RTX 2070 (36x64 cores) Grid(288x512)
+
+ [soon there rely toilet write rate praise cream film loan repair insane] [76E1EFB4C22F34EDEF66D5C0C994C422CC4B26FB657C91BC11667F898DC000DD465F4] [00:01:19] [CPU+GPU: 275,75 Mk/s] [GPU: 275,75 Mk/s] [T: 28,991,029,248] [F: 0] 
+```
+## Modes 6-55 (additional)
 ### Find lost coins using a passphrase 
-### Find lost coins with mnemonic 12 random words
-- [List of additional 5-54 modes](https://github.com/phrutis/LostCoins/blob/main/Others/Modes.md)
+- [List of additional 6-55 modes](https://github.com/phrutis/LostCoins/blob/main/Others/Modes.md)
 
 ## Building
 - Microsoft Visual Studio Community 2019
