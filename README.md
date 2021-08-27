@@ -35,63 +35,15 @@ Options:
     -d, --diz              Display modes -d 0 [info+count], -d 1 SLOW speed [info+hex+count], Default -d 2 [count] HIGH speed
     -k, --color            Colors: 1-255 Recommended 3, 10, 11, 14, 15, 240 (White-black)
     -h, --help             Shows this pagethis page
-
- ```
-## Mode 0 (For CPU) 
-### Constant generation random new hashes in a given range +- ~ 4 bit
- ```
-C:\Users\user>LostCoins.exe -t 6 -f test.bin -r 0 -n 64
-
- LostCoins v1.0
-
- SEARCH MODE  : COMPRESSED
- DEVICE       : CPU
- CPU THREAD   : 6
- GPU IDS      : 0
- GPU GRIDSIZE : -1x128
- RANDOM MODE  : 0
- ROTOR SPEED  : HIGH
- CHARACTERS   : 64
- PASSPHRASE   :
- PASSPHRASE 2 :
- DISPLAY MODE : 2
- TEXT COLOR   : 15
- MAX FOUND    : 256
- HASH160 FILE : test.bin
- OUTPUT FILE  : Found.txt
-
- Loading      : 100 %
- Loaded       : 75,471 address
-
-Bloom at 00000208E842B400
-  Version     : 2.1
-  Entries     : 150942
-  Error       : 0,0000010000
-  Bits        : 4340363
-  Bits/Elem   : 28,755175
-  Bytes       : 542546 (0 MB)
-  Hash funcs  : 20
-
-  Start Time  : Thu Aug 19 11:10:12 2021
-
-  Random mode : 0
-  Mode        : Constant generation random hashes
-  Reload      : Every 1 hex new
-  How work R0 : Cores generate hashes into a buffer
-  How work R0 : After they are sent to the device for checking with a bloom filter to find a positive bitcoin address.
-  How work R0 : Good speed for CPUs. For GPUs -r 0 slow! Use other mode -r 1,2,3,4 for speed
-  Range bit   : 64 (bit) recommended -n 256 (256 searches in the 256-252 range and below)
-  Site        : https://github.com/phrutis/LostCoins
-  Donate      : bc1qh2mvnf5fujg93mwl8pe688yucaw9sflmwsukz9
-
- [00:01:26] [CPU+GPU: 13,83 Mk/s] [GPU: 0,00 Mk/s] [T: 1,193,570,304] [F: 0]
  ```
 ## Mode 1 
-### Random search between start and end hash
+### GPU random search between start and end hash
+ - For GPU ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 1 -s ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f0000000 -z ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61ffffffff```
+
  ```
  C:\Users\user>LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 1 -s ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f0000000 -z ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61ffffffff
 
- LostCoins v1.0
+ LostCoins v2.1
 
  SEARCH MODE  : COMPRESSED
  DEVICE       : GPU
@@ -99,20 +51,20 @@ Bloom at 00000208E842B400
  GPU IDS      : 0
  GPU GRIDSIZE : 288x512
  RANDOM MODE  : 1
- ROTOR SPEED  : HIGH
+ ROTOR SPEED  : HIGH (only counter)
  CHARACTERS   : 0
  PASSPHRASE   : ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f0000000
  PASSPHRASE 2 : ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61ffffffff
  DISPLAY MODE : 2
  TEXT COLOR   : 15
- MAX FOUND    : 256
+ MAX FOUND    : 8
  HASH160 FILE : test.bin
  OUTPUT FILE  : Found.txt
 
  Loading      : 100 %
  Loaded       : 75,471 address
 
-Bloom at 00000278FADDCBF0
+Bloom at 000001FE8C61C5A0
   Version     : 2.1
   Entries     : 150942
   Error       : 0,0000010000
@@ -121,19 +73,19 @@ Bloom at 00000278FADDCBF0
   Bytes       : 542546 (0 MB)
   Hash funcs  : 20
 
-  Start Time  : Thu Aug 19 11:21:51 2021
+  Start Time  : Fri Aug 27 20:54:08 2021
 
   Random mode : 1
   Random      : Finding in a ranges
   Global start: BA7816BF8F01CFEA414140DE5DAE2223B00361A396177A9CB410FF61F0000000 (256 bit)
   Global end  : BA7816BF8F01CFEA414140DE5DAE2223B00361A396177A9CB410FF61FFFFFFFF (256 bit)
-  Global range: FFFFFFF (28 bit)
+  Global range: 000000000000000000000000000000000000000000000000000000000FFFFFFF (28 bit)
   Site        : https://github.com/phrutis/LostCoins
   Donate      : bc1qh2mvnf5fujg93mwl8pe688yucaw9sflmwsukz9
 
   GPU         : GPU #0 NVIDIA GeForce RTX 2070 (36x64 cores) Grid(288x512)
 
- [00:00:22] [CPU+GPU: 1217,95 Mk/s] [GPU: 1217,95 Mk/s] [T: 27,179,089,920] [F: 0]
+ [00:00:22] [CPU+GPU: 1223,71 Mk/s] [GPU: 1223,71 Mk/s] [T: 27,179,089,920] [F: 0]
 
 =================================================================================
 * PubAddress: 1PoQRMsXyQFSqCCRek7tt7umfRkJG9TY8x
@@ -141,23 +93,7 @@ Bloom at 00000278FADDCBF0
 * Priv (HEX): BA7816BF8F01CFEA414140DE5DAE2223B00361A396177A9CB410FF61F20015AD
 =================================================================================
 
- [00:00:24] [CPU+GPU: 1216,69 Mk/s] [GPU: 1216,69 Mk/s] [T: 29,896,998,912] [F: 1]
-
-=================================================================================
-* PubAddress: 1PoQRMsXyQFSqCCRek7tt7umfRkJG9TY8x
-* Priv (WIF): p2pkh: L3UBXym7JYcMX91ssLgZzS2MvxTxjU3VRf9S4jJWXVFdDi4NsLcm
-* Priv (HEX): BA7816BF8F01CFEA414140DE5DAE2223B00361A396177A9CB410FF61F20015AD
-=================================================================================
-
-
-
-=================================================================================
-* PubAddress: 1PoQRMsXyQFSqCCRek7tt7umfRkJG9TY8x
-* Priv (WIF): p2pkh: L3UBXym7JYcMX91ssLgZzS2MvxTxjU3VRf9S4jJWXVFdDi4NsLcm
-* Priv (HEX): BA7816BF8F01CFEA414140DE5DAE2223B00361A396177A9CB410FF61F20015AD
-=================================================================================
-
- [00:00:30] [CPU+GPU: 1215,80 Mk/s] [GPU: 1215,80 Mk/s] [T: 37,144,756,224] [F: 3]
+ [00:00:24] [CPU+GPU: 1224,19 Mk/s] [GPU: 1224,19 Mk/s] [T: 29,896,998,912] [F: 1]
 
 =================================================================================
 * PubAddress: 1PoQRMsXyQFSqCCRek7tt7umfRkJG9TY8x
@@ -173,40 +109,45 @@ Bloom at 00000278FADDCBF0
 * Priv (HEX): BA7816BF8F01CFEA414140DE5DAE2223B00361A396177A9CB410FF61F20015AD
 =================================================================================
 
- [00:00:32] [CPU+GPU: 1161,06 Mk/s] [GPU: 1161,06 Mk/s] [T: 38,956,695,552] [F: 5]
+ [00:00:30] [CPU+GPU: 1141,40 Mk/s] [GPU: 1141,40 Mk/s] [T: 35,332,816,896] [F: 3]
+
+=================================================================================
+* PubAddress: 1PoQRMsXyQFSqCCRek7tt7umfRkJG9TY8x
+* Priv (WIF): p2pkh: L3UBXym7JYcMX91ssLgZzS2MvxTxjU3VRf9S4jJWXVFdDi4NsLcm
+* Priv (HEX): BA7816BF8F01CFEA414140DE5DAE2223B00361A396177A9CB410FF61F20015AD
+=================================================================================
+
+ [00:00:32] [CPU+GPU: 1139,89 Mk/s] [GPU: 1139,89 Mk/s] [T: 37,144,756,224] [F: 4]
 
 BYE
  ```
- 
- ## Mode 2 (Best speed GPU)
- ### Exact accurate bit by bit search in a range
- - For CPU ```LostCoins.exe -t 6 -f test.bin -r 2 -n 64```
- - For GPU ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 2 -n 64```
+ ### CPU random search between start and end hash
+  - For CPU ```LostCoins.exe -t 6 -f test.bin -r 1 -s ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f0000000 -z ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61ffffffff```
  ```
- C:\Users\user>LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 2 -n 64
+C:\Users\user>LostCoins.exe -t 6 -f test.bin -r 1 -s ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f0000000 -z ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61ffffffff
 
- LostCoins v1.0
+ LostCoins v2.1
 
  SEARCH MODE  : COMPRESSED
- DEVICE       : GPU
- CPU THREAD   : 0
+ DEVICE       : CPU
+ CPU THREAD   : 6
  GPU IDS      : 0
- GPU GRIDSIZE : 288x512
- RANDOM MODE  : 2
- ROTOR SPEED  : HIGH
- CHARACTERS   : 64
- PASSPHRASE   :
- PASSPHRASE 2 :
+ GPU GRIDSIZE : -1x128
+ RANDOM MODE  : 1
+ ROTOR SPEED  : HIGH (only counter)
+ CHARACTERS   : 0
+ PASSPHRASE   : ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f0000000
+ PASSPHRASE 2 : ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61ffffffff
  DISPLAY MODE : 2
  TEXT COLOR   : 15
- MAX FOUND    : 256
+ MAX FOUND    : 8
  HASH160 FILE : test.bin
  OUTPUT FILE  : Found.txt
 
  Loading      : 100 %
  Loaded       : 75,471 address
 
-Bloom at 0000020DFA65CAC0
+Bloom at 000001BB4D2AD670
   Version     : 2.1
   Entries     : 150942
   Error       : 0,0000010000
@@ -215,77 +156,25 @@ Bloom at 0000020DFA65CAC0
   Bytes       : 542546 (0 MB)
   Hash funcs  : 20
 
-  Start Time  : Thu Aug 19 12:29:08 2021
+  Start Time  : Fri Aug 27 20:58:48 2021
 
-  Random mode : 2
-  Random      : Finding in a range
-  Use range   : 64 (bit)
-  Rotor       : Random generate hex in range 64 (bit)
+  Random mode : 1
+  Random      : Finding in a ranges
+  Global start: BA7816BF8F01CFEA414140DE5DAE2223B00361A396177A9CB410FF61F0000000 (256 bit)
+  Global end  : BA7816BF8F01CFEA414140DE5DAE2223B00361A396177A9CB410FF61FFFFFFFF (256 bit)
+  Global range: 000000000000000000000000000000000000000000000000000000000FFFFFFF (28 bit)
   Site        : https://github.com/phrutis/LostCoins
   Donate      : bc1qh2mvnf5fujg93mwl8pe688yucaw9sflmwsukz9
 
-  GPU         : GPU #0 NVIDIA GeForce RTX 2070 (36x64 cores) Grid(288x512)
-
- [00:01:03] [CPU+GPU: 1274,81 Mk/s] [GPU: 1274,81 Mk/s] [T: 77,007,421,440] [F: 0]
+ [00:24:24] [CPU+GPU: 10,49 Mk/s] [GPU: 0,00 Mk/s] [T: 14,947,074,048] [F: 0]
  ```
- ## Mode 3
- ### Search randomly for hash part + -n values (0-f)
- For finding a puzzles 64 example: 
- LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 3 -n 15 -s 8 -d 1
+ ## Mode 2
+ ### Exact accurate bit by bit search in a range
+ - For GPU ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 2 -n 64```
  ```
- C:\Users\user>LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 3 -n 10 -s f01cfea414140de5dae2223b0036 -d 1
+C:\Users\user>LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 4 -s 64 -z 72
 
- LostCoins v1.0
-
- SEARCH MODE  : COMPRESSED
- DEVICE       : GPU
- CPU THREAD   : 0
- GPU IDS      : 0
- GPU GRIDSIZE : 288x512
- RANDOM MODE  : 3
- ROTOR SPEED  : SLOW (hashes sha256 are displayed)
- CHARACTERS   : 10
- PASSPHRASE   : f01cfea414140de5dae2223b0036
- PASSPHRASE 2 :
- DISPLAY MODE : 1
- TEXT COLOR   : 15
- MAX FOUND    : 50
- HASH160 FILE : test.bin
- OUTPUT FILE  : Found.txt
-
- Loading      : 100 %
- Loaded       : 75,471 address
-
-Bloom at 000001BE7A7EC9D0
-  Version     : 2.1
-  Entries     : 150942
-  Error       : 0,0000010000
-  Bits        : 4340363
-  Bits/Elem   : 28,755175
-  Bytes       : 542546 (0 MB)
-  Hash funcs  : 20
-
-  Start Time  : Thu Aug 19 13:34:39 2021
-
-  Random mode : 3
-  Random      : Finding hex + -n ? letters (0-f)
-  Start       : f01cfea414140de5dae2223b00360000000001
-  Finish      : f01cfea414140de5dae2223b0036ffffffffff
-  Range       : f01cfea414140de5dae2223b0036 + 10 x (0-f)
-  Site        : https://github.com/phrutis/LostCoins
-  Donate      : bc1qh2mvnf5fujg93mwl8pe688yucaw9sflmwsukz9
-
-  GPU         : GPU #0 NVIDIA GeForce RTX 2070 (36x64 cores) Grid(288x512)
-
- [F01CFEA414140DE5DAE2223B0036A3F92F05BA] (152 bit)
- ```
- 
-  ## Mode 4 (Best speed GPU)
-  ### Exact random search between specified ranges
- ```
- C:\Users\user>LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 4 -s 64 -z 72
-
- LostCoins v1.0
+ LostCoins v2.1
 
  SEARCH MODE  : COMPRESSED
  DEVICE       : GPU
@@ -293,20 +182,20 @@ Bloom at 000001BE7A7EC9D0
  GPU IDS      : 0
  GPU GRIDSIZE : 288x512
  RANDOM MODE  : 4
- ROTOR SPEED  : HIGH
+ ROTOR SPEED  : HIGH (only counter)
  CHARACTERS   : 0
  PASSPHRASE   : 64
  PASSPHRASE 2 : 72
  DISPLAY MODE : 2
  TEXT COLOR   : 15
- MAX FOUND    : 50
+ MAX FOUND    : 8
  HASH160 FILE : test.bin
  OUTPUT FILE  : Found.txt
 
  Loading      : 100 %
  Loaded       : 75,471 address
 
-Bloom at 0000024CFFD6D970
+Bloom at 000001C38473B730
   Version     : 2.1
   Entries     : 150942
   Error       : 0,0000010000
@@ -315,28 +204,237 @@ Bloom at 0000024CFFD6D970
   Bytes       : 542546 (0 MB)
   Hash funcs  : 20
 
-  Start Time  : Thu Aug 19 13:49:09 2021
+  Start Time  : Fri Aug 27 20:21:58 2021
 
   Random mode : 4
-  Random      : Finding in a range
+  Random      : Finding in a ranges
   Start range : 64 (bit)
   End range   : 72 (bit)
   Rotor       : Generate random hex in ranges 64 <~> 72
+  Rotor GPU   : Reloading new starting hashes in ranges every 100.000.000.000 on the counter
   Site        : https://github.com/phrutis/LostCoins
   Donate      : bc1qh2mvnf5fujg93mwl8pe688yucaw9sflmwsukz9
 
   GPU         : GPU #0 NVIDIA GeForce RTX 2070 (36x64 cores) Grid(288x512)
 
- [00:01:46] [CPU+GPU: 1284,81 Mk/s] [GPU: 1214,81 Mk/s] [T: 124,117,843,968] [F: 0]
+ [00:02:38] [CPU+GPU: 1151,94 Mk/s] [GPU: 1151,94 Mk/s] [T: 173,040,205,824] [F: 0]
+ ```
+  ### Exact accurate bit by bit search in a range 
+ - For CPU ```LostCoins.exe -t 6 -f test.bin -r 2 -n 64 -d 2``` Speed
+ - For CPU ```LostCoins.exe -t 6 -f test.bin -r 2 -n 64 -d 0``` Normal
+ - For CPU ```LostCoins.exe -t 6 -f test.bin -r 2 -n 64 -d 1``` Slow
+  ```
+  C:\Users\user>LostCoins.exe -t 6 -f test.bin -r 2 -n 64 -d 1
+
+ LostCoins v2.1
+
+ SEARCH MODE  : COMPRESSED
+ DEVICE       : CPU
+ CPU THREAD   : 6
+ GPU IDS      : 0
+ GPU GRIDSIZE : -1x128
+ RANDOM MODE  : 2
+ ROTOR SPEED  : VERY SLOW (info+hashes+counter are displayed)
+ CHARACTERS   : 64
+ PASSPHRASE   :
+ PASSPHRASE 2 :
+ DISPLAY MODE : 1
+ TEXT COLOR   : 15
+ MAX FOUND    : 8
+ HASH160 FILE : test.bin
+ OUTPUT FILE  : Found.txt
+
+ Loading      : 100 %
+ Loaded       : 75,471 address
+
+Bloom at 000001ABE41DD5D0
+  Version     : 2.1
+  Entries     : 150942
+  Error       : 0,0000010000
+  Bits        : 4340363
+  Bits/Elem   : 28,755175
+  Bytes       : 542546 (0 MB)
+  Hash funcs  : 20
+
+  Start Time  : Fri Aug 27 20:27:54 2021
+
+  Random mode : 2
+  Random      : Finding in a range
+  Use range   : 64 (bit)
+  Rotor       : Random generate hex in range 64
+  Rotor CPU   : 6 cores constant random generation hashes in 64 (bit) range
+  Site        : https://github.com/phrutis/LostCoins
+  Donate      : bc1qh2mvnf5fujg93mwl8pe688yucaw9sflmwsukz9
+
+ [C5388EB5509D77A9] (64 bit)                                                          [00:00:34] [CPU+GPU: 10,71 Mk/s] [GPU: 0,00 Mk/s] [T: 379,490,304] [F: 0]
+  ```
+ ## Mode 3
+ ### Search privat key (part+ -n values +par2 + -n value)
+ - Run GPU: ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 3 -s 0123456789abcdef -n 10 -z fedcba9876543210 -m 5 -d 2```
+ - Examples others combinations:
+ - Run GPU: ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 3 -n 10 -z fedcba9876543210 -m 5 -d 0```
+ - Run GPU: ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 3 -s 0123456789abcdef -z fedcba9876543210 -m 9 -d 0``` 
+ - Run GPU: ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 3 -s 0123456789abcdeffedcba9876543210 -m 20 -d 0```
+ 
+ ```
+ C:\Users\user>LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 3 -s 0123456789abcdef -n 10 -z fedcba9876543210 -m 5 -d 0
+
+ LostCoins v2.1
+
+ SEARCH MODE  : COMPRESSED
+ DEVICE       : GPU
+ CPU THREAD   : 0
+ GPU IDS      : 0
+ GPU GRIDSIZE : 288x512
+ RANDOM MODE  : 3
+ ROTOR SPEED  : SLOW (info+counter are displayed)
+ CHARACTERS   : 10
+ PASSPHRASE   : 0123456789abcdef
+ PASSPHRASE 2 : fedcba9876543210
+ DISPLAY MODE : 0
+ TEXT COLOR   : 15
+ MAX FOUND    : 5
+ HASH160 FILE : test.bin
+ OUTPUT FILE  : Found.txt
+
+ Loading      : 100 %
+ Loaded       : 75,471 address
+
+Bloom at 000001F5A6C0C1B0
+  Version     : 2.1
+  Entries     : 150942
+  Error       : 0,0000010000
+  Bits        : 4340363
+  Bits/Elem   : 28,755175
+  Bytes       : 542546 (0 MB)
+  Hash funcs  : 20
+
+  Start Time  : Fri Aug 27 20:37:25 2021
+
+  Random mode : 3
+  Random      : Part+value+part2+value
+  Part        : 0123456789abcdef
+  Value       : 10 x (0-f)
+  Part 2      : fedcba9876543210
+  Value 2     : 5 x (0-f)
+  Example     : 0123456789abcdef[<<10>>]fedcba9876543210[<<5>>]
+  Site        : https://github.com/phrutis/LostCoins
+  Donate      : bc1qh2mvnf5fujg93mwl8pe688yucaw9sflmwsukz9
+
+  GPU         : GPU #0 NVIDIA GeForce RTX 2070 (36x64 cores) Grid(288x512)
+
+ [0123456789abcdef029c91aeaefedcba987654321042b1d]
+ ```
+ ### Search privat key (part+ -n values +par2 + -n value)
+  - Run CPU: ```LostCoins.exe -t 6 -f test.bin -r 3 -s 0123456789abcdef -n 10 -z fedcba9876543210 -m 5 -d 0```
+ ```
+C:\Users\user>LostCoins.exe -t 6 -f test.bin -r 3 -s 0123456789abcdef -n 10 -z fedcba9876543210 -m 5 -d 0
+
+ LostCoins v2.1
+
+ SEARCH MODE  : COMPRESSED
+ DEVICE       : CPU
+ CPU THREAD   : 6
+ GPU IDS      : 0
+ GPU GRIDSIZE : -1x128
+ RANDOM MODE  : 3
+ ROTOR SPEED  : SLOW (info+counter are displayed)
+ CHARACTERS   : 10
+ PASSPHRASE   : 0123456789abcdef
+ PASSPHRASE 2 : fedcba9876543210
+ DISPLAY MODE : 0
+ TEXT COLOR   : 15
+ MAX FOUND    : 5
+ HASH160 FILE : test.bin
+ OUTPUT FILE  : Found.txt
+
+ Loading      : 100 %
+ Loaded       : 75,471 address
+
+Bloom at 0000022BC7B1D2D0
+  Version     : 2.1
+  Entries     : 150942
+  Error       : 0,0000010000
+  Bits        : 4340363
+  Bits/Elem   : 28,755175
+  Bytes       : 542546 (0 MB)
+  Hash funcs  : 20
+
+  Start Time  : Fri Aug 27 20:51:30 2021
+
+  Random mode : 3
+  Random      : Part+value+part2+value
+  Part        : 0123456789abcdef
+  Value       : 10 x (0-f)
+  Part 2      : fedcba9876543210
+  Value 2     : 5 x (0-f)
+  Example     : 0123456789abcdef[<<10>>]fedcba9876543210[<<5>>]
+  Site        : https://github.com/phrutis/LostCoins
+  Donate      : bc1qh2mvnf5fujg93mwl8pe688yucaw9sflmwsukz9
+
+ [0123456789abcdef8a76254fa7fedcba987654321093150] [00:00:44] [CPU+GPU: 10,72 Mk/s] [GPU: 0,00 Mk/s] [T: 476,338,176] [F: 0]
+ ```
+  ## Mode 4
+  ### Exact random search between specified ranges
+ - Run GPU ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 4 -s 64 -z 72```
+ - Run CPU ```LostCoins.exe -t 6 -f test.bin -r 4 -s 64 -z 256```
+ ```
+C:\Users\user>LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 4 -s 64 -z 72
+
+ LostCoins v2.1
+
+ SEARCH MODE  : COMPRESSED
+ DEVICE       : GPU
+ CPU THREAD   : 0
+ GPU IDS      : 0
+ GPU GRIDSIZE : 288x512
+ RANDOM MODE  : 4
+ ROTOR SPEED  : HIGH (only counter)
+ CHARACTERS   : 0
+ PASSPHRASE   : 64
+ PASSPHRASE 2 : 72
+ DISPLAY MODE : 2
+ TEXT COLOR   : 15
+ MAX FOUND    : 8
+ HASH160 FILE : test.bin
+ OUTPUT FILE  : Found.txt
+
+ Loading      : 100 %
+ Loaded       : 75,471 address
+
+Bloom at 00000285064CB6E0
+  Version     : 2.1
+  Entries     : 150942
+  Error       : 0,0000010000
+  Bits        : 4340363
+  Bits/Elem   : 28,755175
+  Bytes       : 542546 (0 MB)
+  Hash funcs  : 20
+
+  Start Time  : Fri Aug 27 21:25:05 2021
+
+  Random mode : 4
+  Random      : Finding in a ranges
+  Start range : 64 (bit)
+  End range   : 72 (bit)
+  Rotor       : Generate random hex in ranges 64 <~> 72
+  Rotor GPU   : Reloading new starting hashes in ranges every 100.000.000.000 on the counter
+  Site        : https://github.com/phrutis/LostCoins
+  Donate      : bc1qh2mvnf5fujg93mwl8pe688yucaw9sflmwsukz9
+
+  GPU         : GPU #0 NVIDIA GeForce RTX 2070 (36x64 cores) Grid(288x512)
+
+ [00:01:19] [CPU+GPU: 1112,32 Mk/s] [GPU: 1112,32 Mk/s] [T: 92,408,905,728] [F: 0]
  ```
  ## Mode 5
- ### Mnemonic 12 random words (bip39)
- - Start HIGH Speed GPU: ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 5```
- - Use for **TEST only** ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 5 -d 1``` **Very Slow**!!!
-```
-C:\Users\user>LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 5 -d 1
+ #### GPU Mnemonic 12 random words (bip39)
+ - Run GPU: ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 5 -d 2```
+ - TEST only ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 5 -d 1``` Slow
 
- LostCoins v2.0
+```
+C:\Users\user>LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 5 -d 2
+
+ LostCoins v2.1
 
  SEARCH MODE  : COMPRESSED
  DEVICE       : GPU
@@ -344,20 +442,20 @@ C:\Users\user>LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 5 -d 1
  GPU IDS      : 0
  GPU GRIDSIZE : 288x512
  RANDOM MODE  : 5
- ROTOR SPEED  : SLOW (hashes sha256 are displayed)
+ ROTOR SPEED  : HIGH (only counter)
  CHARACTERS   : 0
  PASSPHRASE   :
  PASSPHRASE 2 :
- DISPLAY MODE : 1
+ DISPLAY MODE : 2
  TEXT COLOR   : 15
- MAX FOUND    : 50
+ MAX FOUND    : 8
  HASH160 FILE : test.bin
  OUTPUT FILE  : Found.txt
 
  Loading      : 100 %
  Loaded       : 75,471 address
 
-Bloom at 000002404799E490
+Bloom at 000002C57125CB30
   Version     : 2.1
   Entries     : 150942
   Error       : 0,0000010000
@@ -366,7 +464,7 @@ Bloom at 000002404799E490
   Bytes       : 542546 (0 MB)
   Hash funcs  : 20
 
-  Start Time  : Mon Aug 23 22:54:04 2021
+  Start Time  : Fri Aug 27 20:04:18 2021
 
   Random mode : 5
   Using       : Mnemonic (bip39)
@@ -377,11 +475,154 @@ Bloom at 000002404799E490
 
   GPU         : GPU #0 NVIDIA GeForce RTX 2070 (36x64 cores) Grid(288x512)
 
- [soon there rely toilet write rate praise cream film loan repair insane] [76E1EFB4C22F34EDEF66D5C0C994C422CC4B26FB657C91BC11667F898DC000DD465F4] [00:01:19] [CPU+GPU: 275,75 Mk/s] [GPU: 275,75 Mk/s] [T: 28,991,029,248] [F: 0] 
+ [00:00:34] [CPU+GPU: 1320,45 Mk/s] [GPU: 1320,45 Mk/s] [T: 44,674,604,544] [F: 0]
 ```
-## Modes 6-55 (additional)
+
+ #### CPU Mnemonic 12 random words (bip39)
+ - Run CPU: ```LostCoins.exe -t 6 -f test.bin -r 5 -d 2``` Speed  (only counter)
+ - Run CPU: ```LostCoins.exe -t 6 -f test.bin -r 5 -d 0``` Normal (info+counter)
+ - Run CPU: ```LostCoins.exe -t 6 -f test.bin -r 5 -d 1``` Slow  (info+hex+counter)
+ 
+ ```
+C:\Users\user>LostCoins.exe -t 6 -f test.bin -r 5 -d 1
+
+ LostCoins v2.1
+
+ SEARCH MODE  : COMPRESSED
+ DEVICE       : CPU
+ CPU THREAD   : 6
+ GPU IDS      : 0
+ GPU GRIDSIZE : -1x128
+ RANDOM MODE  : 5
+ ROTOR SPEED  : VERY SLOW (info+hashes+counter are displayed)
+ CHARACTERS   : 0
+ PASSPHRASE   :
+ PASSPHRASE 2 :
+ DISPLAY MODE : 1
+ TEXT COLOR   : 15
+ MAX FOUND    : 8
+ HASH160 FILE : test.bin
+ OUTPUT FILE  : Found.txt
+
+ Loading      : 100 %
+ Loaded       : 75,471 address
+
+Bloom at 0000020B050ED080
+  Version     : 2.1
+  Entries     : 150942
+  Error       : 0,0000010000
+  Bits        : 4340363
+  Bits/Elem   : 28,755175
+  Bytes       : 542546 (0 MB)
+  Hash funcs  : 20
+
+  Start Time  : Fri Aug 27 20:09:11 2021
+
+  Random mode : 5
+  Using       : Mnemonic (bip39)
+  List        : 2048 words
+  Rotor       : Generation of 12 random words
+  Site        : https://github.com/phrutis/LostCoins
+  Donate      : bc1qh2mvnf5fujg93mwl8pe688yucaw9sflmwsukz9
+
+ [seat toilet all attend need ghost direct rival fold fault once virus] [488E1BCEED165888124686F4BDCFEC2CEBDA9F79B5CAB82442A091A66F873B8F]  310,167,552] [F: 0]
+ ```
+## Mode 6 
+#### For GPU Reloads random starting hashes in a given range (+-4 bit) every 100.000.000.000 on the counter
+Run GPU:  ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 6 -n 256 ```
+ ```
+C:\Users\user>LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 6 -n 256
+
+ LostCoins v2.1
+
+ SEARCH MODE  : COMPRESSED
+ DEVICE       : GPU
+ CPU THREAD   : 0
+ GPU IDS      : 0
+ GPU GRIDSIZE : 288x512
+ RANDOM MODE  : 6
+ ROTOR SPEED  : HIGH (only counter)
+ CHARACTERS   : 256
+ PASSPHRASE   :
+ PASSPHRASE 2 :
+ DISPLAY MODE : 2
+ TEXT COLOR   : 15
+ MAX FOUND    : 8
+ HASH160 FILE : test.bin
+ OUTPUT FILE  : Found.txt
+
+ Loading      : 100 %
+ Loaded       : 75,471 address
+
+Bloom at 000001C300C0D860
+  Version     : 2.1
+  Entries     : 150942
+  Error       : 0,0000010000
+  Bits        : 4340363
+  Bits/Elem   : 28,755175
+  Bytes       : 542546 (0 MB)
+  Hash funcs  : 20
+
+  Start Time  : Fri Aug 27 19:12:08 2021
+
+  Random mode : 6
+  Rotor GPU   : Reloading new starting hashes in range every 100.000.000.000 on the counter
+  Range bit   : 256 (bit) Recommended -n 256 (256 searches in the 252-256 range and below)
+  Site        : https://github.com/phrutis/LostCoins
+  Donate      : bc1qh2mvnf5fujg93mwl8pe688yucaw9sflmwsukz9
+
+  GPU         : GPU #0 NVIDIA GeForce RTX 2070 (36x64 cores) Grid(288x512)
+
+ [00:32:28] [CPU+GPU: 1009,71 Mk/s] [GPU: 1009,71 Mk/s] [T: 1,898,006,446,080] [F: 0]
+ ```
+ #### For CPU Constant generation random new hashes in a given range +- ~ 4 bit
+ - Run CPU:  ```LostCoins.exe -t 6 -f test.bin -r 0 -n 256 ```
+ ```
+C:\Users\user>LostCoins.exe -t 6 -f test.bin -r 6 -n 256 -d 1
+
+ LostCoins v2.1
+
+ SEARCH MODE  : COMPRESSED
+ DEVICE       : CPU
+ CPU THREAD   : 6
+ GPU IDS      : 0
+ GPU GRIDSIZE : -1x128
+ RANDOM MODE  : 6
+ ROTOR SPEED  : VERY SLOW (info+hashes+counter are displayed)
+ CHARACTERS   : 256
+ PASSPHRASE   :
+ PASSPHRASE 2 :
+ DISPLAY MODE : 1
+ TEXT COLOR   : 15
+ MAX FOUND    : 8
+ HASH160 FILE : test.bin
+ OUTPUT FILE  : Found.txt
+
+ Loading      : 100 %
+ Loaded       : 75,471 address
+
+Bloom at 000001FE264FCDA0
+  Version     : 2.1
+  Entries     : 150942
+  Error       : 0,0000010000
+  Bits        : 4340363
+  Bits/Elem   : 28,755175
+  Bytes       : 542546 (0 MB)
+  Hash funcs  : 20
+
+  Start Time  : Fri Aug 27 19:47:26 2021
+
+  Random mode : 6
+  Rotor CPU   : 6 cores constant random generation hashes in range 256 (bit)
+  Range bit   : 256 (bit) Recommended -n 256 (256 searches in the 252-256 range and below)
+  Site        : https://github.com/phrutis/LostCoins
+  Donate      : bc1qh2mvnf5fujg93mwl8pe688yucaw9sflmwsukz9
+
+ (255 bit) [494293D26D905A0F268AD5AC2A921DEF8CFF3ECFC9794DF3E4D0B39E651BE942]         [00:01:35] [CPU+GPU: 10,56 Mk/s] [GPU: 0,00 Mk/s] [T: 1,029,347,328] [F: 0]
+ ```
+## Modes 7-56 (additional)
 ### Find lost coins using a passphrase 
-- [List of additional 6-55 modes](https://github.com/phrutis/LostCoins/blob/main/Others/Modes.md)
+- [List of additional 7-56 modes](https://github.com/phrutis/LostCoins/blob/main/Others/Modes.md)
 
 ## Building
 - Microsoft Visual Studio Community 2019
