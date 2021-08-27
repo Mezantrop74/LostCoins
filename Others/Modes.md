@@ -23,218 +23,218 @@ You may be interested - [Why random is faster than brute force](https://github.c
 
 # Examples of how to use modes in LostCoins
  ![alt text](https://github.com/phrutis/LostCoins/blob/main/Others/3.jpg "LostCoins")
-## Mode 6
-### Generate passphrase from -n ? random digits (0-9)
- - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 6 -n 8 -d 0```
- - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 6 -n 8 -d 0```
 ## Mode 7
-### Generate passphrase from -n ? random letters (a-z)
+### Generate passphrase from -n ? random digits (0-9)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 7 -n 8 -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 7 -n 8 -d 0```
 ## Mode 8
-### Generate passphrase from -n ? random letters (A-Z)
+### Generate passphrase from -n ? random letters (a-z)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 8 -n 8 -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 8 -n 8 -d 0```
 ## Mode 9
-### Generate passphrase from -n ? random letters (a-z0-9)
+### Generate passphrase from -n ? random letters (A-Z)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 9 -n 8 -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 9 -n 8 -d 0```
 ## Mode 10
-### Generate passphrase from -n ? random letters (A-Z0-9)
+### Generate passphrase from -n ? random letters (a-z0-9)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 10 -n 8 -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 10 -n 8 -d 0```
 ## Mode 11
-### Generate passphrase from -n ? random letters (A-Za-z)
+### Generate passphrase from -n ? random letters (A-Z0-9)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 11 -n 8 -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 11 -n 8 -d 0```
 ## Mode 12
-### Generate passphrase from -n ? random letters (ab-zA-Z0-9)
+### Generate passphrase from -n ? random letters (A-Za-z)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 12 -n 8 -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 12 -n 8 -d 0```
 ## Mode 13
-### Generate passphrase from -n ? random letters (a-zA-Z0-9+symbols)
+### Generate passphrase from -n ? random letters (ab-zA-Z0-9)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 13 -n 8 -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 13 -n 8 -d 0```
-
- ![alt text](https://github.com/phrutis/LostCoins/blob/main/Others/2.jpg "LostCoins")
 ## Mode 14
-### Generate passphrase from -n ? random russian letters (а-я)
+### Generate passphrase from -n ? random letters (a-zA-Z0-9+symbols)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 14 -n 8 -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 14 -n 8 -d 0```
 ## Mode 15
-### Generate passphrase from -n ? random russian letters (А-Я)
+ ![alt text](https://github.com/phrutis/LostCoins/blob/main/Others/2.jpg "LostCoins")
+### Generate passphrase from -n ? random russian letters (а-я)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 15 -n 8 -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 15 -n 8 -d 0```
 ## Mode 16
-### Generate passphrase from -n ? random russian letters (А-Яа-я)
+### Generate passphrase from -n ? random russian letters (А-Я)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 16 -n 8 -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 16 -n 8 -d 0```
 ## Mode 17
-### Generate passphrase from -n ? random russian letters (А-Яа-я0-9)
+### Generate passphrase from -n ? random russian letters (А-Яа-я)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 17 -n 8 -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 17 -n 8 -d 0```
 ## Mode 18
-### Generate passphrase from -n ? random russian letters (А-Я-я0-9+symbols)
+### Generate passphrase from -n ? random russian letters (А-Яа-я0-9)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 18 -n 8 -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 18 -n 8 -d 0```
 ## Mode 19
-### Generate passphrase from words+ -n ? random digits (0-9)
- - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 19 -n 8 -s Word word2 word3 is work -d 0```
- - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 19 -n 8 -s Word word2 word3 is work -d 0```
+### Generate passphrase from -n ? random russian letters (А-Я-я0-9+symbols)
+ - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 19 -n 8 -d 0```
+ - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 19 -n 8 -d 0```
 ## Mode 20
-### Generate passphrase from words+ -n ? random letters (a-z)
- - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 20 -n 8 -s Bitcoin -d 0```
- - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 20 -n 8 -s Bitcoin -d 0```
+### Generate passphrase from words+ -n ? random digits (0-9)
+ - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 20 -n 8 -s Word word2 word3 is work -d 0```
+ - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 20 -n 8 -s Word word2 word3 is work -d 0```
 ## Mode 21
-### Generate passphrase from words+ -n ? random letters (A-Z)
+### Generate passphrase from words+ -n ? random letters (a-z)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 21 -n 8 -s Bitcoin -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 21 -n 8 -s Bitcoin -d 0```
 ## Mode 22
-### Generate passphrase from words+ -n ? random letters (a-z0-9)
+### Generate passphrase from words+ -n ? random letters (A-Z)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 22 -n 8 -s Bitcoin -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 22 -n 8 -s Bitcoin -d 0```
 ## Mode 23
-### Generate passphrase from words+ -n ? random letters (A-Z0-9)
+### Generate passphrase from words+ -n ? random letters (a-z0-9)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 23 -n 8 -s Bitcoin -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 23 -n 8 -s Bitcoin -d 0```
 ## Mode 24
-### Generate passphrase from words+ -n ? random letters (A-Za-z)
+### Generate passphrase from words+ -n ? random letters (A-Z0-9)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 24 -n 8 -s Bitcoin -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 24 -n 8 -s Bitcoin -d 0```
 ## Mode 25
-### Generate passphrase from words+ -n ? random letters (a-zA-Z0-9)
+### Generate passphrase from words+ -n ? random letters (A-Za-z)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 25 -n 8 -s Bitcoin -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 25 -n 8 -s Bitcoin -d 0```
 ## Mode 26
-### Generate passphrase from words+ -n ? random letters (a-zA-Z0-9+symbols)
- - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 26 -n 8 -s Bitcoin Bitcoin2 is work -d 0```
- - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 26 -n 8 -s Bitcoin Bitcoin2 is work -d 0```
+### Generate passphrase from words+ -n ? random letters (a-zA-Z0-9)
+ - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 26 -n 8 -s Bitcoin -d 0```
+ - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 26 -n 8 -s Bitcoin -d 0```
 ## Mode 27
-### Generate passphrase from words+ -n ? random russian letters (а-я)
- - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 27 -n 8 -s Приве -d 0т```
- - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 27 -n 8 -s Можно слова через пробел -d 0```
+### Generate passphrase from words+ -n ? random letters (a-zA-Z0-9+symbols)
+ - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 27 -n 8 -s Bitcoin Bitcoin2 is work -d 0```
+ - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 27 -n 8 -s Bitcoin Bitcoin2 is work -d 0```
 ## Mode 28
-### Generate passphrase from words+ -n ? random russian letters (А-Я)
- - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 28 -n 8 -s Привет -d 0```
- - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 28 -n 8 -s Слова можно через пробел -d 0```
+### Generate passphrase from words+ -n ? random russian letters (а-я)
+ - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 28 -n 8 -s Приве -d 0т```
+ - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 28 -n 8 -s Можно слова через пробел -d 0```
 ## Mode 29
-### Generate passphrase from words+ -n ? random russian letters (А-Яа-я)
+### Generate passphrase from words+ -n ? random russian letters (А-Я)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 29 -n 8 -s Привет -d 0```
- - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 29 -n 8 -s Слова можно через пробел -d 0``` 
+ - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 29 -n 8 -s Слова можно через пробел -d 0```
 ## Mode 30
-### Generate passphrase from words+ -n ? random russian letters (А-Яа-я0-9)
+### Generate passphrase from words+ -n ? random russian letters (А-Яа-я)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 30 -n 8 -s Привет -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 30 -n 8 -s Слова можно через пробел -d 0``` 
 ## Mode 31
-### Generate passphrase from words+ -n ? random russian letters (А-Яа-я0-9+symbols)
+### Generate passphrase from words+ -n ? random russian letters (А-Яа-я0-9)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 31 -n 8 -s Привет -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 31 -n 8 -s Слова можно через пробел -d 0``` 
 ## Mode 32
-### Generate passphrase from words(space)+ -n ? random letters (0-9)
- - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 32 -n 8 -s HELLO its work -d 0```
- - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 32 -n 8 -s HELLO its work -d 0```
+### Generate passphrase from words+ -n ? random russian letters (А-Яа-я0-9+symbols)
+ - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 32 -n 8 -s Привет -d 0```
+ - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 32 -n 8 -s Слова можно через пробел -d 0``` 
 ## Mode 33
-### Generate passphrase from words(space)+ -n ? random letters (a-z)
+### Generate passphrase from words(space)+ -n ? random letters (0-9)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 33 -n 8 -s HELLO its work -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 33 -n 8 -s HELLO its work -d 0```
 ## Mode 34
-### Generate passphrase from words(space)+ -n ? random letters (A-Z)
+### Generate passphrase from words(space)+ -n ? random letters (a-z)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 34 -n 8 -s HELLO its work -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 34 -n 8 -s HELLO its work -d 0```
 ## Mode 35
-### Generate passphrase from words(space)+ -n ? random letters (a-z0-9)
+### Generate passphrase from words(space)+ -n ? random letters (A-Z)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 35 -n 8 -s HELLO its work -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 35 -n 8 -s HELLO its work -d 0```
 ## Mode 36
-### Generate passphrase from words(space)+ -n ? random letters (A-Z0-9)
+### Generate passphrase from words(space)+ -n ? random letters (a-z0-9)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 36 -n 8 -s HELLO its work -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 36 -n 8 -s HELLO its work -d 0```
 ## Mode 37
-### Generate passphrase from words(space)+ -n ? random letters (A-Za-z)
+### Generate passphrase from words(space)+ -n ? random letters (A-Z0-9)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 37 -n 8 -s HELLO its work -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 37 -n 8 -s HELLO its work -d 0```
 ## Mode 38
-### Generate passphrase from words(space)+ -n ? random letters (A-Za-z0-9)
+### Generate passphrase from words(space)+ -n ? random letters (A-Za-z)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 38 -n 8 -s HELLO its work -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 38 -n 8 -s HELLO its work -d 0```
 ## Mode 39
-### Generate passphrase from words(space)+ -n ? random letters (A-Za-z0-9+symbols)
+### Generate passphrase from words(space)+ -n ? random letters (A-Za-z0-9)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 39 -n 8 -s HELLO its work -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 39 -n 8 -s HELLO its work -d 0```
 ## Mode 40
-### Generate passphrase from words(space)+ -n ? random russian letters (а-я)
- - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 40 -n 8 -s Юля -d 0```
- - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 40 -n 8 -s Вася -d 0```
+### Generate passphrase from words(space)+ -n ? random letters (A-Za-z0-9+symbols)
+ - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 40 -n 8 -s HELLO its work -d 0```
+ - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 40 -n 8 -s HELLO its work -d 0```
 ## Mode 41
-### Generate passphrase from words(space)+ -n ? random russian letters (А-Я)
+### Generate passphrase from words(space)+ -n ? random russian letters (а-я)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 41 -n 8 -s Юля -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 41 -n 8 -s Вася -d 0```
 ## Mode 42
-### Generate passphrase from words(space)+ -n ? random russian letters (А-Яа-я)
+### Generate passphrase from words(space)+ -n ? random russian letters (А-Я)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 42 -n 8 -s Юля -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 42 -n 8 -s Вася -d 0```
 ## Mode 43
-### enerate passphrase from words(space)+ -n ? random russian letters (А-Яа-я)
+### Generate passphrase from words(space)+ -n ? random russian letters (А-Яа-я)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 43 -n 8 -s Юля -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 43 -n 8 -s Вася -d 0```
 ## Mode 44
-### Generate passphrase from words(space)+ -n ? random russian letters (А-Яа-я0-9)
+### enerate passphrase from words(space)+ -n ? random russian letters (А-Яа-я)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 44 -n 8 -s Юля -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 44 -n 8 -s Вася -d 0```
 ## Mode 45
+### Generate passphrase from words(space)+ -n ? random russian letters (А-Яа-я0-9)
+ - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 45 -n 8 -s Юля -d 0```
+ - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 45 -n 8 -s Вася -d 0```
+## Mode 46
 ### Generate passphrase use mask L(llllllll)dd
 #### Generate a words Alex78, Julia92...
- - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 45 -n 8 -d 0```
- - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 45 -n 8 -d 0```
-## Mode 46
-### Generate passphrase use mask L(llllllll)dddd
-#### Generate a words Alex1978, Julia1992...
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 46 -n 8 -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 46 -n 8 -d 0```
 ## Mode 47
-### Generate passphrase use mask L(llllllll)dddddd
-#### Generate a words Alex301978, Julia201992...
+### Generate passphrase use mask L(llllllll)dddd
+#### Generate a words Alex1978, Julia1992...
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 47 -n 8 -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 47 -n 8 -d 0```
 ## Mode 48
-### Generate random 2 word 3-9 letters (a-z)
- - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 48 -d 0```
- - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 48 -d 0```
+### Generate passphrase use mask L(llllllll)dddddd
+#### Generate a words Alex301978, Julia201992...
+ - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 48 -n 8 -d 0```
+ - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 48 -n 8 -d 0```
 ## Mode 49
-### Passphrase(space) + random 2 word 3-9 letters (a-z)
- - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 49 -s LostCoins is work -d 0```
- - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 49 -s LostCoins is work -d 0```
+### Generate random 2 word 3-9 letters (a-z)
+ - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 49 -d 0```
+ - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 49 -d 0```
 ## Mode 50
-### Mnemonic 12 words 3-5 (a-z)
- - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 50 -d 0```
- - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 50 -d 0```
+### Passphrase(space) + random 2 word 3-9 letters (a-z)
+ - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 50 -s LostCoins is work -d 0```
+ - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 50 -s LostCoins is work -d 0```
 ## Mode 51
-### Mnemonic 12 words 3-7 (a-z)
+### Mnemonic 12 words 3-5 (a-z)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 51 -d 0```
- - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 51 -d 0``` 
+ - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 51 -d 0```
 ## Mode 52
-### Mnemonic 12 words 3-10 (a-z)
+### Mnemonic 12 words 3-7 (a-z)
  - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 52 -d 0```
  - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 52 -d 0``` 
 ## Mode 53
+### Mnemonic 12 words 3-10 (a-z)
+ - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 53 -d 0```
+ - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 53 -d 0``` 
+## Mode 54
 ### Passphrase(space)+ 2 random words 3-9 (a-z)
- - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 53 -n 8 -s HELLO -d 0```
- - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 53 -n 8 -s HELLO -d 0```
-## Mode 54 In development
+ - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 54 -n 8 -s HELLO -d 0```
+ - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 54 -n 8 -s HELLO -d 0```
+## Mode 55 In development
 ### Sequential continuation of the starting word
 #### Very slow algaritm (For one CPU core only!)
 #### Passphrase -> Passphrasf -> PaszzzzzzZ - ZZZZZZZZZZZ (Uld)
- - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 54 -s Example -d 0```
- - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 54 -s Hello -d 0```
-## Mode 55
+ - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 55 -s Example -d 0```
+ - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 55 -s Hello -d 0```
+## Mode 56
 ### Generate pass from -n ? random symbols
- - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 55 -n 8 -d 0```
- - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 55 -n 8 -d 0```
+ - For CPU: ```LostCoins.exe -t 1 -f test.bin -r 56 -n 8 -d 0```
+ - For GPU: ```LostCoins.exe -t 0 -g -i 0 -f test.bin -r 56 -n 8 -d 0```
 
-## Mode 56-99 Possible modes.
+## Mode 57-99 Possible modes.
  - Loading phrases from a text file
  - Sequential generation of letters on the GPU Example: aaa, aab, aaZ, ZZZZ...
  - Setting a mask for generating words [Example mask](https://github.com/hashcat/maskprocessor)
  - The function of adding different languages to generate passphrases
+ - Other mode for search lost coins
 
 
