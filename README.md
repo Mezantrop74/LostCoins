@@ -172,7 +172,7 @@ Bloom at 000001BB4D2AD670
  ### Exact accurate bit by bit search in a range
  - For GPU ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 2 -n 64```
  ```
-C:\Users\user>LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 4 -s 64 -z 72
+C:\Users\user>LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 2 -n 64
 
  LostCoins v2.1
 
@@ -181,11 +181,11 @@ C:\Users\user>LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 4 -s 64 -z 72
  CPU THREAD   : 0
  GPU IDS      : 0
  GPU GRIDSIZE : 288x512
- RANDOM MODE  : 4
+ RANDOM MODE  : 2
  ROTOR SPEED  : HIGH (only counter)
- CHARACTERS   : 0
- PASSPHRASE   : 64
- PASSPHRASE 2 : 72
+ CHARACTERS   : 64
+ PASSPHRASE   :
+ PASSPHRASE 2 :
  DISPLAY MODE : 2
  TEXT COLOR   : 15
  MAX FOUND    : 8
@@ -195,7 +195,7 @@ C:\Users\user>LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 4 -s 64 -z 72
  Loading      : 100 %
  Loaded       : 75,471 address
 
-Bloom at 000001C38473B730
+Bloom at 00000166FA9DD4F0
   Version     : 2.1
   Entries     : 150942
   Error       : 0,0000010000
@@ -204,20 +204,19 @@ Bloom at 000001C38473B730
   Bytes       : 542546 (0 MB)
   Hash funcs  : 20
 
-  Start Time  : Fri Aug 27 20:21:58 2021
+  Start Time  : Sat Aug 28 11:18:24 2021
 
-  Random mode : 4
-  Random      : Finding in a ranges
-  Start range : 64 (bit)
-  End range   : 72 (bit)
-  Rotor       : Generate random hex in ranges 64 <~> 72
-  Rotor GPU   : Reloading new starting hashes in ranges every 100.000.000.000 on the counter
+  Random mode : 2
+  Random      : Finding in a range
+  Use range   : 64 (bit)
+  Rotor       : Random generate hex in range 64
+  Rotor GPU   : Reloading starting hashes in range 64 (bit) every 100.000.000.000 on the counter
   Site        : https://github.com/phrutis/LostCoins
   Donate      : bc1qh2mvnf5fujg93mwl8pe688yucaw9sflmwsukz9
 
   GPU         : GPU #0 NVIDIA GeForce RTX 2070 (36x64 cores) Grid(288x512)
 
- [00:02:38] [CPU+GPU: 1151,94 Mk/s] [GPU: 1151,94 Mk/s] [T: 173,040,205,824] [F: 0]
+ [00:00:26] [CPU+GPU: 1215,44 Mk/s] [GPU: 1215,44 Mk/s] [T: 31,708,938,240] [F: 0]
  ```
   ### Exact accurate bit by bit search in a range 
  - For CPU ```LostCoins.exe -t 6 -f test.bin -r 2 -n 64 -d 2``` Speed
