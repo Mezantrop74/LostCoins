@@ -527,7 +527,7 @@ Bloom at 0000020B050ED080
  [seat toilet all attend need ghost direct rival fold fault once virus] [488E1BCEED165888124686F4BDCFEC2CEBDA9F79B5CAB82442A091A66F873B8F]  310,167,552] [F: 0]
  ```
 ## Mode 6 
-#### For GPU Reloads random starting hashes in a given range (+-4 bit) every 100.000.000.000 on the counter
+#### VanitySearch generator +-~ 4 bit. Reloads random starting points in a given range every 100.000.000.000 on the counter
 Run GPU:  ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 6 -n 256 ```
  ```
 C:\Users\user>LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 6 -n 256
@@ -620,12 +620,12 @@ Bloom at 000001FE264FCDA0
  (255 bit) [494293D26D905A0F268AD5AC2A921DEF8CFF3ECFC9794DF3E4D0B39E651BE942]         [00:01:35] [CPU+GPU: 10,56 Mk/s] [GPU: 0,00 Mk/s] [T: 1,029,347,328] [F: 0]
  ```
 ## Modes 7-56 (additional)
-### Find lost coins using a passphrase 
-- [List of additional 7-56 modes](https://github.com/phrutis/LostCoins/blob/main/Others/Modes.md)
+### Find LostCoins using a random passphrases 
+- [**List of additional 7-56 modes**](https://github.com/phrutis/LostCoins/blob/main/Others/Modes.md)
 
 ## Building
 - Microsoft Visual Studio Community 2019
-- CUDA version 10.22
+- CUDA version [**10.22**](https://developer.nvidia.com/cuda-10.2-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exenetwork)
 ## Donation
 - BTC: bc1qh2mvnf5fujg93mwl8pe688yucaw9sflmwsukz9
 ## License
