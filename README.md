@@ -44,7 +44,7 @@ C:\Users\user>
  - For CPU (SLOW) ```LostCoins.exe -t 1 -f test.bin -r 0 -s Base-passphrases.txt -d 0```
  - For CPU (Very SLOW)  ```LostCoins.exe -t 1 -f test.bin -r 0 -s Base-passphrases.txt -d 1```
  - To search for passphrases, use mode **-u** or **-b** for old Lost Coins 
- - Each password on a new line. You can run these [**password databases**](https://weakpass.com/wordlist) by first cleaning the trash.  
+ - Each password on a new line.   
 ```
 C:\Users\user>LostCoins.exe -t 1 -f test.bin -r 0 -s Base-passphrases.txt
 
