@@ -631,12 +631,12 @@ Bloom at 000001A3E21DC5B0
  [00:00:34] [CPU+GPU: 1230,54 Mk/s] [GPU: 1230,54 Mk/s] [T: 41,674,604,544] [F: 0]
  ```
  ## Mode 5
- #### GPU Mnemonic 12 random words (bip39)
- - Run GPU: ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 5 -d 2```
- - TEST only ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 5 -d 0``` Slow
- - TEST only ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 5 -d 1``` Very Slow
+ ### CPU Passphrases from file random 1-2-3 words (-n 1, -n 2 or -n 3) +hex value
+ - Run GPU: ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f 01.bin -r 5 -n 3 -s test.txt``` HIGH
+ - TEST only ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f 01.bin -r 5 -n 3 -s test.txt -d 0``` Slow
+ - TEST only ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f 01.bin -r 5 -n 3 -s test.txt -d 1``` Very Slow
 ```
-LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 5 -d 0
+C:\Users\user>LostCoins.exe -t 0 -g -i 0 -x 288,512 -f 01.bin -r 5 -n 3 -s test.txt -d 0
 
  LostCoins v2.2
 
@@ -647,48 +647,48 @@ LostCoins.exe -t 0 -g -i 0 -x 288,512 -f test.bin -r 5 -d 0
  GPU GRIDSIZE : 288x512
  RANDOM MODE  : 5
  ROTOR SPEED  : SLOW (info+counter are displayed)
- CHARACTERS   : 0
- PASSPHRASE   :
+ CHARACTERS   : 3
+ PASSPHRASE   : test.txt
  PASSPHRASE 2 :
  DISPLAY MODE : 0
  TEXT COLOR   : 15
  GPU REKEY    : 100000000000
- HASH160 FILE : test.bin
+ HASH160 FILE : 01.bin
  OUTPUT FILE  : Found.txt
 
  Loading      : 100 %
- Loaded       : 75,471 address
+ Loaded       : 1,326,779 address
 
-Bloom at 00000172C3F7E0C0
+Bloom at 000001991D0FDC30
   Version     : 2.1
-  Entries     : 150942
+  Entries     : 2653558
   Error       : 0,0000010000
-  Bits        : 4340363
+  Bits        : 76303525
   Bits/Elem   : 28,755175
-  Bytes       : 542546 (0 MB)
+  Bytes       : 9537941 (9 MB)
   Hash funcs  : 20
 
-  Start Time  : Mon Aug 30 20:19:36 2021
+  Start Time  : Wed Sep  1 19:41:21 2021
 
   Random mode : 5
-  Using       : Mnemonic (bip39)
-  List        : 2048 words
-  Rotor       : Generation of 12 random words
+  Using       : Mnemonic words from file test.txt
+  List        : 810 words
+  Rotor       : Generation of 3 random words
   Site        : https://github.com/phrutis/LostCoins
   Donate      : bc1qh2mvnf5fujg93mwl8pe688yucaw9sflmwsukz9
 
   GPU         : GPU #0 NVIDIA GeForce RTX 2070 (36x64 cores) Grid(288x512)
 
- [cereal river purchase abstract rack cactus visit crew sorry energy turic rifle]
+ [watter good day]
 ```
 
- #### CPU Mnemonic 12 random words (bip39)
- - Run CPU: ```LostCoins.exe -t 6 -f test.bin -r 5 -d 2``` Speed  (only counter)
- - Run CPU: ```LostCoins.exe -t 6 -f test.bin -r 5 -d 0``` Normal (info+counter)
- - Run CPU: ```LostCoins.exe -t 6 -f test.bin -r 5 -d 1``` Slow  (info+hex+counter)
+  ### CPU Passphrases from file random 1-2-3 words (-n ?) + hex value
+ - Run CPU: ```LostCoins.exe -t 6 -f 01.bin -r 5 -s test.txt -n 2``` Speed  (only counter)
+ - Run CPU: ```LostCoins.exe -t 6 -f 01.bin -r 5 -s test.txt -n 3 -d 0``` Normal (info+counter)
+ - Run CPU: ```LostCoins.exe -t 6 -f 01.bin -r 5 -s test.txt -n 3 -d 1``` Slow  (info+hex+counter)
  
  ```
-C:\Users\user>LostCoins.exe -t 6 -f test.bin -r 5 -d 1
+C:\Users\user>LostCoins.exe -t 6 -f test.bin -r 5 -s test.txt -n 3 -d 0
 
  LostCoins v2.2
 
@@ -698,38 +698,38 @@ C:\Users\user>LostCoins.exe -t 6 -f test.bin -r 5 -d 1
  GPU IDS      : 0
  GPU GRIDSIZE : -1x128
  RANDOM MODE  : 5
- ROTOR SPEED  : VERY SLOW (info+hashes+counter are displayed)
- CHARACTERS   : 0
- PASSPHRASE   :
+ ROTOR SPEED  : SLOW (info+counter are displayed)
+ CHARACTERS   : 3
+ PASSPHRASE   : test.txt
  PASSPHRASE 2 :
- DISPLAY MODE : 1
+ DISPLAY MODE : 0
  TEXT COLOR   : 15
  GPU REKEY    : 100000000000
- HASH160 FILE : test.bin
+ HASH160 FILE : 01.bin
  OUTPUT FILE  : Found.txt
 
  Loading      : 100 %
- Loaded       : 75,471 address
+ Loaded       : 1,326,779 address
 
-Bloom at 0000020B6024D480
+Bloom at 0000023966DABE40
   Version     : 2.1
-  Entries     : 150942
+  Entries     : 2653558
   Error       : 0,0000010000
-  Bits        : 4340363
+  Bits        : 76303525
   Bits/Elem   : 28,755175
-  Bytes       : 542546 (0 MB)
+  Bytes       : 9537941 (9 MB)
   Hash funcs  : 20
 
-  Start Time  : Mon Aug 30 20:21:20 2021
+  Start Time  : Wed Sep  1 19:34:10 2021
 
   Random mode : 5
-  Using       : Mnemonic (bip39)
-  List        : 2048 words
-  Rotor       : Generation of 12 random words
+  Using       : Mnemonic words from file test.txt
+  List        : 810 words
+  Rotor       : Generation of 3 random words
   Site        : https://github.com/phrutis/LostCoins
   Donate      : bc1qh2mvnf5fujg93mwl8pe688yucaw9sflmwsukz9
 
- [slight fold just legend version wrong silly electric draw script illness genuine] [4B08BA1060C8B3FD6012A31F30FE44D7267277FEBB2EDAA229A349A068A3F8C4] 2] [F: 0]
+ [bitcoin is awesome]                       [00:00:42] [CPU+GPU: 14,81 Mk/s] [GPU: 0,00 Mk/s] [T: 638,662,656] [F: 0]
  ```
 ## Mode 6 
 #### VanitySearch generator +-~ 4 (bit)
