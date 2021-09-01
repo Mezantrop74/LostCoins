@@ -139,7 +139,6 @@ BYE
  - For CPU (Very SLOW)  ```LostCoins.exe -t 1 -f test.bin -r 0 -s private-keys.txt -z keys -d 1```
  - Private key (HEX) looks like this only numbers 0-9 and letters a,b,c,d,e,f on a new line. 
  - Example: 4A70FE9AA6436E02C2DEA340FBD1E352E4EF2D8CE6CA52AD25D4B95471FC8BF2
- - Each Private keys on a new line. 
  - Don't use a Multicores, works only single core -t 1 (GPU not supported)
 ```
 C:\Users\user>LostCoins.exe -b -t 1 -f test.bin -r 0 -s private-keys.txt -z keys
@@ -640,7 +639,7 @@ Bloom at 000001A3E21DC5B0
  [00:00:34] [CPU+GPU: 1230,54 Mk/s] [GPU: 1230,54 Mk/s] [T: 41,674,604,544] [F: 0]
  ```
  ## Mode 5
- ### CPU Passphrases from file random 1-2-3 words (-n 1, -n 2 or -n 3) +hex value
+ ### GPU Passphrases from file random 1-2-3 words (-n 1, -n 2 or -n 3) +hex value
  - Run GPU: ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f 01.bin -r 5 -n 3 -s test.txt``` HIGH
  - TEST only ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f 01.bin -r 5 -n 3 -s test.txt -d 0``` Slow
  - TEST only ```LostCoins.exe -t 0 -g -i 0 -x 288,512 -f 01.bin -r 5 -n 3 -s test.txt -d 1``` Very Slow
